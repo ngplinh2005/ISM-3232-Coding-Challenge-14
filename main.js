@@ -29,6 +29,9 @@ async function displayTickets() {
         ticketContainer.appendChild(ticketList) 
     } catch (error) {
         errorMessage.textContent = error.message
+
+    // Task 4: Use finally to Ensure Cleanup
+    
     } finally {
         console.log("Fetch attempt completed")
     }
