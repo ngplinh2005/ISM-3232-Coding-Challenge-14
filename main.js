@@ -29,6 +29,12 @@ async function displayTickets() {
         ticketContainer.appendChild(ticketList) 
     } catch (error) {
         errorMessage.textContent = error.message
+    } finally {
+        console.log("Fetch attempt completed")
     }
 }
+
+// Fetch and display tickets for customer 
+displayTickets()
+
 
