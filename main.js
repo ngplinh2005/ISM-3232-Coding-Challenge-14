@@ -15,5 +15,20 @@ async function displayTickets() {
         if (tickets.length === 0) {
             throw new Error("No unresolved tickets available")
         }
+
+        // Task 3: Display Tickets Dynamically on the Page
+
+        const ticketList = document.createElement("ul") 
+
+        tickets.forEach(ticket => {
+            const listItem = document.createElement("li")
+            listItem.textContent = `Ticket ID: ${ticket.id}, Customer Name: User ${ticket.userId}, Issue: ${ticket.title}, Details: ${ticket.body}`
+            ticketList.appendChild(listItem)
+        })
+
+        ticketContainer.appendChild(ticketList) 
+    } catch (error) {
+        errorMessage.textContent = error.message
     }
 }
+
